@@ -9,7 +9,7 @@ export const Navbar = (props) => {
 			</Link>
 			<div className="ml-auto">
 			<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-lg btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Favorites <span className="badge bg-secondary">{props.favCounter}</span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
