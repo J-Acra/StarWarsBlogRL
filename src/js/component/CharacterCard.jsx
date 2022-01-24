@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const CharacterCard = (props) => {
-  let [favToggle, setFavToggle] = useState(<i className="far fa-heart"></i>)
+  let [favToggle, setFavToggle] = useState("far fa-heart")
 
 return (
 <div className="card" style= {{width: "18rem"}}>
@@ -16,7 +16,7 @@ return (
   </ul>
   <div className="cardButtons d-flex">
     <button type="button" className="btn btn-primary">Learn More!</button>
-    <button type="button" className="ms-auto btn btn-warning">{favToggle}</button>
+    <button type="button" className="ms-auto btn btn-warning"><i className={favToggle}></i></button>
   </div>
 </div>
 )};
