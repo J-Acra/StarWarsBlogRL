@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 const CharacterCard = (props) => {
   let [favToggle, setFavToggle] = useState("far fa-heart")
+  let [favList, setFavList] = useState([])
+  let [hoverState, setHover] = useState(undefined);
+
+  const addToFav = () =>{
+
+  }
 
 return (
 <div className="card" style= {{width: "18rem"}}>
@@ -15,8 +21,17 @@ return (
     <li className="list-group-item ">{props.eyeColor}</li>
   </ul>
   <div className="cardButtons d-flex">
-    <button type="button" className="btn btn-primary">Learn More!</button>
-    <button type="button" className="ms-auto btn btn-warning"><i className={favToggle}></i></button>
+  <Link to="/single/0">
+  <button type="button" className="btn btn-primary">Learn More!</button>
+</Link>
+    <button 
+    onMouseEnter={() => setHover(i)} 
+    onMouseLeave={() => setHover(undefined)}
+    onClick={() => (favToggle=="far fa-heart") ? setFavToggle("fas fa-heart"):setFavToggle("far fa-heart")}
+    type="button" 
+    className="ms-auto btn btn-warning">
+      <i className={favToggle}></i>
+    </button>
   </div>
 </div>
 )};

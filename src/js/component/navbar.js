@@ -13,9 +13,9 @@ export const Navbar = (props) => {
     Favorites <span className="badge bg-secondary">{props.favCounter}</span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-   <li><Link to="./single/0" className="dropdown-item" > Action</Link></li>
-   <li><Link to="./single/1" className="dropdown-item" > Action</Link></li>
-   <li><Link to="./single/2" className="dropdown-item" > Action</Link></li>
+   <li><Link to="/single/:theid" className="dropdown-item" > Fav1</Link></li>
+   <li><Link to="/single/:theid" className="dropdown-item" > Fav2</Link></li>
+   <li><Link to="/single/:theid" className="dropdown-item" > Fav3</Link></li>
   </ul>
 </div>
 			</div>

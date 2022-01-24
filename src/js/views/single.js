@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";;
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Single = props => {
 	const params = useParams();
+	const { store, actions } = useContext(Context);
 	return (
 		<>
+		<p className="display-4 text-center">This will show the demo element: {store.demo[params.theid].title}</p>
 			<div className="container">
 				<div className="row">
 				<div className="detailPicture col"></div>

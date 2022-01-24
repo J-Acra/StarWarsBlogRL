@@ -2,13 +2,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			demo: [
+				//this is where the favorite cards details view will be stored/displayed when clicked
 				{
 					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
 					background: "white",
 					initial: "white"
 				}
