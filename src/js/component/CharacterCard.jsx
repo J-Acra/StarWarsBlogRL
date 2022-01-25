@@ -1,38 +1,46 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const CharacterCard = (props) => {
-  let [favToggle, setFavToggle] = useState("far fa-heart")
-  let [favList, setFavList] = useState([])
+  let [favToggle, setFavToggle] = useState("far fa-heart");
+  let [favList, setFavList] = useState([]);
   let [hoverState, setHover] = useState(undefined);
+  const { store, actions } = useContext(Context);
 
-  const addToFav = () =>{
+  const toggleHeart = () => {
+    favToggle === "far fa-heart"
+      ? setFavToggle("fas fa-heart")
+      : setFavToggle("far fa-heart");
+  };
 
-  }
-
-return (
-<div className="card" style= {{width: "18rem"}}>
-<img className="card-img-top" src={"http://placehold.it/400x200"}></img>
-  <ul className="card-body">
-    <h5 className="card-title">{props.characterName}</h5>
-    <li className="list-group-item ">{props.gender}</li>
-    <li className="list-group-item ">{props.hairColor}</li>
-    <li className="list-group-item ">{props.eyeColor}</li>
-  </ul>
-  <div className="cardButtons d-flex">
-  <Link to="/single/0">
-  <button type="button" className="btn btn-primary">Learn More!</button>
-</Link>
-    <button 
-    onMouseEnter={() => setHover(i)} 
-    onMouseLeave={() => setHover(undefined)}
-    onClick={() => (favToggle=="far fa-heart") ? setFavToggle("fas fa-heart"):setFavToggle("far fa-heart")}
-    type="button" 
-    className="ms-auto btn btn-warning">
-      <i className={favToggle}></i>
-    </button>
-  </div>
-</div>
-)};
+  return (
+    <div className="card" style={{ width: "18rem" }}>
+      <img className="card-img-top" src="https://placehold.it/400x200"></img>
+      <ul className="card-body">
+        <h5 className="card-title">{props.name}</h5>
+        <li className="list-group-item ">Gender: {props.gender}</li>
+        <li className="list-group-item ">Hair-Color: {props.hairColor}</li>
+        <li className="list-group-item ">Eye-Color: {props.eyeColor}</li>
+      </ul>
+      <div className="cardButtons d-flex">
+        <Link to="/single/0">
+          <button type="button" className="btn btn-primary">
+            Learn More!
+          </button>
+        </Link>
+        <button
+          onMouseEnter={() => setHover(i)}
+          onMouseLeave={() => setHover(undefined)}
+          onClick={() => actions.addFav(props.data)}
+          type="button"
+          className="ms-auto btn btn-warning"
+        >
+          <i className={favToggle}></i>
+        </button>
+      </div>
+    </div>
+  );
+};
 export default CharacterCard;

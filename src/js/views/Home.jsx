@@ -1,43 +1,38 @@
-import React from "react";
+import React, {useState,useContext} from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import CharacterCard from "../component/CharacterCard.jsx"
+import CharacterCard from "../component/CharacterCard.jsx";
 import propTypes from "prop-types";
-import PlanetCard from "../component/PlanetCard.jsx"
-
+import PlanetCard from "../component/PlanetCard.jsx";
+import { Context } from "../store/appContext";
 
 const Home = (props) => {
-	return(
-		<>
-	<h1 className="text-danger ms-3">Characters</h1>
-	<div className="characterDisplay d-flex flex-row text-center mt-5">
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	<div className="col mx-3"><CharacterCard characterName="Luke Skywalker" gender="Gender:Male" hairColor="Hair-Color: Blonde" eyeColor="Eye-Color: blue"/></div>
-	</div>
-	<h1 className="text-danger ms-3 mt-3">Planets</h1>
-	<div className="planetDisplay d-flex flex-row text-center mt-5">
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-	<div className="col mx-3"><PlanetCard planetName="Alderaan" population="Population: 20,000" terrain="Terrain:Rocky"/></div>
-
-	</div>
-	
-	</>
-
-	)
+  const { store, actions } = useContext(Context);
+  return (
+    <>
+      <h1 className="text-danger ms-3">Characters</h1>
+      <div className="characterDisplay d-flex flex-row text-center mt-5">
+        <div className="col mx-3">
+        {store.characters.map((c,id) => <CharacterCard 
+        name={store.characters[id].Name}
+        gender={store.characters[id].gender}
+        hairColor={store.characters[id].hairColor}
+        eyeColor={store.characters[id].eyeColor}
+        data={c}/> )}
+        </div>
+      </div>
+      <h1 className="text-danger ms-3 mt-3">Planets</h1>
+      <div className="planetDisplay d-flex flex-row text-center mt-5">
+        <div className="col mx-3">
+        {store.planets.map((c,id) => <PlanetCard 
+        name={store.planets[id].Name}
+        population={store.planets[id].population}
+        terrain={store.planets[id].terrain}
+        data={c}/> )}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Home;
