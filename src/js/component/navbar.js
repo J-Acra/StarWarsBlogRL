@@ -39,7 +39,7 @@ export const Navbar = (props) => {
             ) : (
               store.favorites.map((f, positionFav) => (
                 <li className="dropdown-item">
-                    <Link className="noStyle" to="/CharacterDetails/0">
+                    <Link className="noStyle" to={"/CharacterDetails/" + positionFav}>
                         {f.Name} 
                     </Link>
                     <i

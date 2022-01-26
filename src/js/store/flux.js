@@ -29,8 +29,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         {
           Name: "Tatooine",
           terrain:"Grasslands, Mountains",
-          rotation_period: "23",
-          orbital_period: "304",
+          rotationPeriod: "23",
+          orbitalPeriod: "304",
           diameter: "10465",
           climate: "arid",
           population: "200000",

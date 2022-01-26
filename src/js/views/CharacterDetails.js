@@ -33,12 +33,30 @@ export const CharacterDetails = (props) => {
             </p>
           </div>
           <div className="bottomInfo row border-top border-danger p-3">
-            <div className="text-danger col">Name</div>
-            <div className="text-danger col">Birth Year</div>
-            <div className="text-danger col">Gender</div>
-            <div className="text-danger col">Height</div>
-            <div className="text-danger col">Skin Color</div>
-            <div className="text-danger col">Eye Color</div>
+            <div className="col">
+              <div className="text-danger text-center">Name</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.Name}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Birth Year</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.birthYear}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Gender</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.gender}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Height</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.height}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Hair Color</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.hairColor}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Skin Color</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.skinColor}</div>
+            </div>
           </div>
         </div>
       </div>

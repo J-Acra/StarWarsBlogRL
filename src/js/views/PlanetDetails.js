@@ -33,12 +33,30 @@ export const PlanetDetails = (props) => {
             </p>
           </div>
           <div className="bottomInfo row border-top border-danger p-3">
-            <div className="text-danger col">Name</div>
-            <div className="text-danger col">Climate</div>
-            <div className="text-danger col">Population</div>
-            <div className="text-danger col">OrbitalPeriod</div>
-            <div className="text-danger col">RotationPeriod</div>
-            <div className="text-danger col">Diameter</div>
+          <div className="col">
+              <div className="text-danger text-center">Name</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.Name}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Birth Year</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.climate}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Gender</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.population}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Height</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.orbitalPeriod}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Hair Color</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.rotationPeriod}</div>
+            </div>
+            <div className="col">
+              <div className="text-danger text-center">Skin Color</div>
+              <div className="mt-3 text-center">{store.characters[params.theid]?.diameter}</div>
+            </div>
           </div>
         </div>
       </div>
