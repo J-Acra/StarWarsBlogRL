@@ -24,13 +24,13 @@ const CharacterCard = (props) => {
         <li className="list-group-item ">Eye-Color: {props.eyeColor}</li>
       </ul>
       <div className="cardButtons d-flex">
-        <Link to="/CharacterDetails/0">
+        <Link to={props.detail}>
           <button type="button" className="btn btn-primary">
             Learn More!
           </button>
         </Link>
         <button
-          onClick={() => actions.addFav(props.data)}
+          onClick={() =>{actions.addFav(props.data),toggleHeart()}}
           type="button"
           className="ms-auto btn btn-warning"
         >

@@ -16,7 +16,7 @@ const PlanetCard = (props) => {
         <li className="list-group-item ">Terrain: {props.terrain}</li>
       </ul>
       <div className="cardButtons d-flex">
-        <Link to="/PlanetDetails/0">
+        <Link to={props.detail}>
           <button type="button" className="btn btn-primary">
             Learn More!
           </button>

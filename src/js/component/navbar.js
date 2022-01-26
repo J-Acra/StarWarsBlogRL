@@ -39,8 +39,8 @@ export const Navbar = (props) => {
             ) : (
               store.favorites.map((f, positionFav) => (
                 <li className="dropdown-item">
-                    <Link className="noStyle" to={"/CharacterDetails/" + positionFav}>
-                        {f.Name} 
+                    <Link className="noStyle" to={f.detail + positionFav}>
+                        {f.Name}
                     </Link>
                     <i
                       style={{ cursor: cursor }}

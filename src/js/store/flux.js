@@ -13,9 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
           birthYear: "19BBY",
           gender: "Male",
           id: 0,
+          favorited: false,
+          detail:"/CharacterDetails/"
         },
                 {
-          Name: "Luke Skywalker",
+          Name: "C3P0",
           height: "172",
           skinColor: "fair",
           hairColor: "Blonde",
@@ -23,6 +25,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           birthYear: "19BBY",
           gender: "Male",
           id: 1,
+          favorited:false,
+          detail:"/CharacterDetails/"
         },
       ],
       planets: [
@@ -35,6 +39,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           climate: "arid",
           population: "200000",
           id: 2,
+          favorited:false,
+          detail:"/PlanetDetails/"
+        },
+        {
+          Name: "Aldeeera",
+          terrain:"Grasslands, Mountains",
+          rotationPeriod: "23",
+          orbitalPeriod: "304",
+          diameter: "10465",
+          climate: "arid",
+          population: "200000",
+          id: 2,
+          favorited:false,
+          detail:"/PlanetDetails/"
         },
       ],
     },

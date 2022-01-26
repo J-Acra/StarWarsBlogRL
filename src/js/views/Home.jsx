@@ -17,6 +17,7 @@ const Home = (props) => {
         gender={store.characters[id].gender}
         hairColor={store.characters[id].hairColor}
         eyeColor={store.characters[id].eyeColor}
+        detail= {(store.characters[id].detail)+id}
         data={c}/> </div> )}
       </div>
       <h1 className="text-danger ms-3 mt-3">Planets</h1>
@@ -25,6 +26,7 @@ const Home = (props) => {
         name={store.planets[id].Name}
         population={store.planets[id].population}
         terrain={store.planets[id].terrain}
+        detail= {(store.planets[id].detail)+id}
         data={c}/> </div> )}
       </div>
     </>
