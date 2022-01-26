@@ -1,7 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      favorites: [],
+      favorites: [
+      ],
       characters: [
         {
           Name: "Luke Skywalker",
@@ -69,21 +70,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
       },
-      addFav: (favorite) => {
+      checkFav: (favorite) => {
         const { favorites } = getStore();
-        favorite.favorited="fas fa-heart"
-        setStore({ favorites: favorites.concat(favorite) });
+        if (favorite.favorited===true){
+          favorite.favorited = false;
+        }
+        else{
+          favorite.favorited=true;
+          setStore({ favorites: favorites.concat(favorite) });
+        }
       },
       remFav: (position) => {
         const { favorites } = getStore();
+        let newFavorites = favorites.map((item, index) => {
+          if (index === position) {
+            item["favorited"] = false;
+            return item;
+          } else {
+            return item;
+          }
+        });
+        console.log(newFavorites)
         setStore({
-          favorites: favorites.filter((f, favId) => favId !== position),
+          favorites: newFavorites.filter((f, favId) => favId !== position),
         });
       },
-      clearFavorites:() => {
-        const {favorites} = getStore();
-        setStore({ favorites: []})
-      }
+      clearFavorites: () => {
+        const { favorites } = getStore();
+        setStore({ favorites: [] });
+      },
     },
   };
 };

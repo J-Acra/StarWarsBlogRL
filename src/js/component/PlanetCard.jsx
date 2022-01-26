@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const PlanetCard = (props) => {
-  let [favToggle, setFavToggle] = useState("far fa-heart");
   const { store, actions } = useContext(Context);
 
   const handleToggle = () =>{
@@ -28,11 +27,11 @@ const PlanetCard = (props) => {
         <button
           onMouseEnter={() => setHover(i)}
           onMouseLeave={() => setHover(undefined)}
-          onClick={() => {actions.addFav(props.data),handleToggle()}}
+          onClick={() => actions.checkFav(props.data)}
           type="button"
           className="ms-auto btn btn-warning"
         >
-          <i className={favToggle}></i>
+          {props.favStatus===true?<i className="fas fa-heart"></i>:<i className="far fa-heart"></i>}
         </button>
       </div>
     </div>
