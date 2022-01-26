@@ -6,10 +6,6 @@ import { Context } from "../store/appContext";
 const PlanetCard = (props) => {
   const { store, actions } = useContext(Context);
 
-  const handleToggle = () =>{
-    (favToggle==="far fa-heart"? setFavToggle("fas fa-heart"): setFavToggle("far fa-heart"))
-  }
-
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img className="card-img-top" src="http://placehold.it/400x200"></img>
@@ -25,8 +21,6 @@ const PlanetCard = (props) => {
           </button>
         </Link>
         <button
-          onMouseEnter={() => setHover(i)}
-          onMouseLeave={() => setHover(undefined)}
           onClick={() => actions.checkFav(props.data)}
           type="button"
           className="ms-auto btn btn-warning"

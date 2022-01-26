@@ -72,13 +72,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       checkFav: (favoriteCard) => {
         const { favorites } = getStore();
-        if (favoriteCard.isFav===true){
-          favoriteCard.isFav = false;
-          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.name !== favoriteCard.name)})
+        if (favoriteCard.isFav===false){
+          favoriteCard.isFav = true;
+          setStore({ favorites: favorites.concat(favoriteCard) });
         }
         else{
-          favorite.isFav=true;
-          setStore({ favorites: favorites.concat(favorite) });
+          favoriteCard.isFav=false;
+          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.name !== favoriteCard.name)});
         }
       },
       remFav: (position) => {
