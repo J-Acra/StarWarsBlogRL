@@ -21,7 +21,7 @@ const Home = (props) => {
               hairColor={store.characters[id].hairColor}
               eyeColor={store.characters[id].eyeColor}
               detail={store.characters[id].detail + id}
-              favStatus={store.characters[id].favorited}
+              favStatus={store.characters[id].isFav}
               data={c}
             />{" "}
           </div>
@@ -37,7 +37,7 @@ const Home = (props) => {
               population={store.planets[id].population}
               terrain={store.planets[id].terrain}
               detail={store.planets[id].detail + id}
-              favStatus={store.planets[id].favorited}
+              favStatus={store.planets[id].isFav}
               data={c}
             />{" "}
           </div>

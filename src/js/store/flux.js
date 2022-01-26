@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           birthYear: "19BBY",
           gender: "Male",
           uid: 0,
-          favorited: "far fa-heart",
+          isFav: false,
           detail: "/CharacterDetails/",
           description: "This is a description",
         },
@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           birthYear: "19BBY",
           gender: "Robot",
           uid: 1,
-          favorited: "far fa-heart",
+          isFav: false,
           detail: "/CharacterDetails/",
           description: "This is a description",
         },
@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           climate: "arid",
           population: "200000",
           uid: 0,
-          favorited: false,
+          isFav: false,
           detail: "/PlanetDetails/",
           description: "This is a description",
         },
@@ -54,7 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           climate: "arid",
           population: "200000",
           uid: 1,
-          favorited: false,
+          isFav: false,
           detail: "/PlanetDetails/",
           description: "This is a description",
         },
@@ -70,14 +70,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
       },
-      checkFav: (favorite) => {
+      checkFav: (favoriteCard) => {
         const { favorites } = getStore();
-        if (favorite.favorited===true){
-          favorite.favorited = false;
-          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.name !== favorite.name)})
+        if (favoriteCard.isFav===true){
+          favoriteCard.isFav = false;
+          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.name !== favoriteCard.name)})
         }
         else{
-          favorite.favorited=true;
+          favorite.isFav=true;
           setStore({ favorites: favorites.concat(favorite) });
         }
       },
@@ -85,7 +85,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const { favorites } = getStore();
         let newFavorites = favorites.map((item, index) => {
           if (index === position) {
-            item["favorited"] = false;
+            item["isFav"] = false;
             return item;
           } else {
             return item;
