@@ -74,6 +74,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const { favorites } = getStore();
         if (favorite.favorited===true){
           favorite.favorited = false;
+          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.name !== favorite.name)})
         }
         else{
           favorite.favorited=true;
