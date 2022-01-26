@@ -80,6 +80,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           favorites: favorites.filter((f, favId) => favId !== position),
         });
       },
+      clearFavorites:() => {
+        const {favorites} = getStore();
+        setStore({ favorites: []})
+      }
     },
   };
 };

@@ -51,6 +51,7 @@ export const Navbar = (props) => {
                 </li>
               ))
             )}
+            {store.favorites.length!==0 ?(<li style={{cursor:cursor}} onMouseEnter={()=>changeCursor} onClick={()=>actions.clearFavorites()} className="text-center border-top bg-light">Clear Favorites</li>):null}
           </ul>
         </div>
       </div>
