@@ -1,4 +1,4 @@
-import React, {useState,useContext} from "react";
+import React, { useState, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import CharacterCard from "../component/CharacterCard.jsx";
@@ -12,22 +12,35 @@ const Home = (props) => {
     <>
       <h1 className="text-danger ms-3">Characters</h1>
       <div className="characterDisplay d-flex flex-row text-center mt-5">
-        {store.characters.map((c,id) => <div className="col mx-3"> <CharacterCard 
-        name={store.characters[id].Name}
-        gender={store.characters[id].gender}
-        hairColor={store.characters[id].hairColor}
-        eyeColor={store.characters[id].eyeColor}
-        detail= {(store.characters[id].detail)+id}
-        data={c}/> </div> )}
+        {store.characters.map((c, id) => (
+          <div className="col mx-3">
+            {" "}
+            <CharacterCard
+              name={store.characters[id].Name}
+              gender={store.characters[id].gender}
+              hairColor={store.characters[id].hairColor}
+              eyeColor={store.characters[id].eyeColor}
+              detail={store.characters[id].detail + id}
+              isFav={store.characters[id].favorited}
+              data={c}
+            />{" "}
+          </div>
+        ))}
       </div>
       <h1 className="text-danger ms-3 mt-3">Planets</h1>
       <div className="planetDisplay d-flex flex-row text-center mt-5">
-        {store.planets.map((c,id) => <div className="col mx-3"> <PlanetCard 
-        name={store.planets[id].Name}
-        population={store.planets[id].population}
-        terrain={store.planets[id].terrain}
-        detail= {(store.planets[id].detail)+id}
-        data={c}/> </div> )}
+        {store.planets.map((c, id) => (
+          <div className="col mx-3">
+            {" "}
+            <PlanetCard
+              name={store.planets[id].Name}
+              population={store.planets[id].population}
+              terrain={store.planets[id].terrain}
+              detail={store.planets[id].detail + id}
+              data={c}
+            />{" "}
+          </div>
+        ))}
       </div>
     </>
   );

@@ -39,15 +39,15 @@ export const Navbar = (props) => {
             ) : (
               store.favorites.map((f, positionFav) => (
                 <li className="dropdown-item">
-                    <Link className="noStyle" to={f.detail + positionFav}>
-                        {f.Name}
-                    </Link>
-                    <i
-                      style={{ cursor: cursor }}
-                      onMouseEnter={() => changeCursor}
-                      onClick={() => actions.remFav(positionFav)}
-                      className="fas fa-trash mx-1"
-                    ></i>
+                  <Link className="noStyle" to={f.detail + f.uid}>
+                    {f.Name}
+                  </Link>
+                  <i
+                    style={{ cursor: cursor }}
+                    onMouseEnter={() => changeCursor}
+                    onClick={() => actions.remFav(positionFav)}
+                    className="fas fa-trash mx-1"
+                  ></i>
                 </li>
               ))
             )}

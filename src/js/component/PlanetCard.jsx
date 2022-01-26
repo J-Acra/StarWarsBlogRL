@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const PlanetCard = (props) => {
-  let [favToggle, setFavToggle] = useState(<i className="far fa-heart"></i>);
+  let [favToggle, setFavToggle] = useState("far fa-heart");
   const { store, actions } = useContext(Context);
+
+  const handleToggle = () =>{
+    (favToggle==="far fa-heart"? setFavToggle("fas fa-heart"): setFavToggle("far fa-heart"))
+  }
 
   return (
     <div className="card" style={{ width: "18rem" }}>
@@ -24,11 +28,11 @@ const PlanetCard = (props) => {
         <button
           onMouseEnter={() => setHover(i)}
           onMouseLeave={() => setHover(undefined)}
-          onClick={() => actions.addFav(props.data)}
+          onClick={() => {actions.addFav(props.data),handleToggle()}}
           type="button"
           className="ms-auto btn btn-warning"
         >
-          {favToggle}
+          <i className={favToggle}></i>
         </button>
       </div>
     </div>

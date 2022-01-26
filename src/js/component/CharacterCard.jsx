@@ -5,15 +5,12 @@ import { Context } from "../store/appContext";
 
 const CharacterCard = (props) => {
   let [favToggle, setFavToggle] = useState("far fa-heart");
-  let [favList, setFavList] = useState([]);
   const { store, actions } = useContext(Context);
 
-  const toggleHeart = () => {
-    favToggle === "far fa-heart"
-      ? setFavToggle("fas fa-heart")
-      : setFavToggle("far fa-heart");
-  };
-
+  const handleToggle = () =>{
+    (favToggle==="far fa-heart"? setFavToggle("fas fa-heart"): setFavToggle("far fa-heart"))
+  }
+  
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img className="card-img-top" src="https://placehold.it/400x200"></img>
@@ -30,7 +27,7 @@ const CharacterCard = (props) => {
           </button>
         </Link>
         <button
-          onClick={() =>{actions.addFav(props.data),toggleHeart()}}
+          onClick={() => {actions.addFav(props.data),handleToggle()}}
           type="button"
           className="ms-auto btn btn-warning"
         >
