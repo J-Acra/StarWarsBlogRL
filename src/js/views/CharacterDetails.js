@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = (props) => {
+export const CharacterDetails = (props) => {
   const params = useParams();
   const { store, actions } = useContext(Context);
   return (
@@ -13,9 +13,7 @@ export const Single = (props) => {
           <div className="detailPicture col"></div>
           <div className="detailText col">
             <h1 className="mx-auto text-center">
-              I am coded into single.js but my values are stored in
-              flux.js(demo) this is my value =>{" "}
-              {store.characters[params.theid]?.characterName}
+              {store.characters[params.theid]?.Name}
             </h1>
             <p className="text-center mx-4 p-5">
               Maecenas non placerat mauris. Vestibulum molestie, felis ut
@@ -55,6 +53,6 @@ export const Single = (props) => {
   );
 };
 
-Single.propTypes = {
+CharacterDetails.propTypes = {
   match: PropTypes.object,
 };

@@ -52,9 +52,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         const { favorites } = getStore();
         setStore({ favorites: favorites.concat(favorite) });
       },
-      remFav: (favoriteId) => {
+      remFav: (position) => {
         const { favorites } = getStore();
-        setStore({favorites : store.favorites.filter(f => f.id !==favoriteId) });
+        setStore({favorites : favorites.filter((f,favId) => favId!==position) });
       },
     },
   };

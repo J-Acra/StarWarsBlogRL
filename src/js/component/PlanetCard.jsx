@@ -16,15 +16,17 @@ const PlanetCard = (props) => {
         <li className="list-group-item ">Terrain: {props.terrain}</li>
       </ul>
       <div className="cardButtons d-flex">
-        <button type="button" className="btn btn-primary">
-          Learn More!
-        </button>
+        <Link to="/PlanetDetails/0">
+          <button type="button" className="btn btn-primary">
+            Learn More!
+          </button>
+        </Link>
         <button
-        onMouseEnter={() => setHover(i)}
-        onMouseLeave={() => setHover(undefined)}
-        onClick={() => actions.addFav(props.data)}
-        type="button"
-        className="ms-auto btn btn-warning"
+          onMouseEnter={() => setHover(i)}
+          onMouseLeave={() => setHover(undefined)}
+          onClick={() => actions.addFav(props.data)}
+          type="button"
+          className="ms-auto btn btn-warning"
         >
           {favToggle}
         </button>

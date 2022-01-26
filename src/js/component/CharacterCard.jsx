@@ -6,7 +6,6 @@ import { Context } from "../store/appContext";
 const CharacterCard = (props) => {
   let [favToggle, setFavToggle] = useState("far fa-heart");
   let [favList, setFavList] = useState([]);
-  let [hoverState, setHover] = useState(undefined);
   const { store, actions } = useContext(Context);
 
   const toggleHeart = () => {
@@ -25,14 +24,12 @@ const CharacterCard = (props) => {
         <li className="list-group-item ">Eye-Color: {props.eyeColor}</li>
       </ul>
       <div className="cardButtons d-flex">
-        <Link to="/single/0">
+        <Link to="/CharacterDetails/0">
           <button type="button" className="btn btn-primary">
             Learn More!
           </button>
         </Link>
         <button
-          onMouseEnter={() => setHover(i)}
-          onMouseLeave={() => setHover(undefined)}
           onClick={() => actions.addFav(props.data)}
           type="button"
           className="ms-auto btn btn-warning"

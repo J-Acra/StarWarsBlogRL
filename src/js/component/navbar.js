@@ -27,28 +27,30 @@ export const Navbar = (props) => {
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
-            data-bs-auto-close="inside"
+            data-bs-auto-close="false"
             aria-expanded="false"
           >
             Favorites
             <span className="badge bg-secondary">{store.favorites.length}</span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            {store.favorites.map((f) => (
-              <li>
-                <Link to="/single/0">
-                  <p class="dropdown-item" href="#">
-                    {f.Name}
-                  </p>
-                </Link>{" "}
-                <i
-                  style={{ cursor: cursor }}
-                  onMouseEnter={() => changeCursor}
-                  onClick={() => actions.remFav(props.data)}
-                  class="fas fa-trash"
-                ></i>
-              </li>
-            ))}
+            {store.favorites.length === 0 ? (
+              <li>Empty!</li>
+            ) : (
+              store.favorites.map((f, positionFav) => (
+                <li className="dropdown-item">
+                    <Link className="noStyle" to="/CharacterDetails/0">
+                        {f.Name} 
+                    </Link>
+                    <i
+                      style={{ cursor: cursor }}
+                      onMouseEnter={() => changeCursor}
+                      onClick={() => actions.remFav(positionFav)}
+                      className="fas fa-trash mx-1"
+                    ></i>
+                </li>
+              ))
+            )}
           </ul>
         </div>
       </div>

@@ -49,3 +49,7 @@
     height:174px;
     background:grey;
 }
+.noStyle{
+    text-decoration:none;
+    color:black;
+}

@@ -12,24 +12,20 @@ const Home = (props) => {
     <>
       <h1 className="text-danger ms-3">Characters</h1>
       <div className="characterDisplay d-flex flex-row text-center mt-5">
-        <div className="col mx-3">
-        {store.characters.map((c,id) => <CharacterCard 
+        {store.characters.map((c,id) => <div className="col mx-3"> <CharacterCard 
         name={store.characters[id].Name}
         gender={store.characters[id].gender}
         hairColor={store.characters[id].hairColor}
         eyeColor={store.characters[id].eyeColor}
-        data={c}/> )}
-        </div>
+        data={c}/> </div> )}
       </div>
       <h1 className="text-danger ms-3 mt-3">Planets</h1>
       <div className="planetDisplay d-flex flex-row text-center mt-5">
-        <div className="col mx-3">
-        {store.planets.map((c,id) => <PlanetCard 
+        {store.planets.map((c,id) => <div className="col mx-3"> <PlanetCard 
         name={store.planets[id].Name}
         population={store.planets[id].population}
         terrain={store.planets[id].terrain}
-        data={c}/> )}
-        </div>
+        data={c}/> </div> )}
       </div>
     </>
   );
