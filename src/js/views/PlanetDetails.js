@@ -10,10 +10,18 @@ export const PlanetDetails = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="detailPicture col"></div>
+          <div className="col">
+          <img
+              src={
+                store.images["/PlanetDetails/"+ params.theid] ||
+                "https://snr.unl.edu/images/portrait-large/staff/whiteblank.gif"
+              }
+              className="float-start"
+            ></img>
+          </div>
           <div className="detailText col">
             <h1 className="mx-auto text-center">
-              {store.planets[params.theid]?.Name}
+              {store.planets[params.theid]?.name}
             </h1>
             <p className="text-center mx-4 p-5">
               {store.planets[params.theid]?.description}
@@ -23,7 +31,7 @@ export const PlanetDetails = (props) => {
             <div className="col">
               <div className="text-danger text-center">Name</div>
               <div className="mt-3 text-center">
-                {store.planets[params.theid]?.Name}
+                {store.planets[params.theid]?.name}
               </div>
             </div>
             <div className="col">
@@ -41,13 +49,13 @@ export const PlanetDetails = (props) => {
             <div className="col">
               <div className="text-danger text-center">Orbital Period</div>
               <div className="mt-3 text-center">
-                {store.planets[params.theid]?.orbitalPeriod}
+                {store.planets[params.theid]?.orbital_period}
               </div>
             </div>
             <div className="col">
               <div className="text-danger text-center">Rotation Period</div>
               <div className="mt-3 text-center">
-                {store.planets[params.theid]?.rotationPeriod}
+                {store.planets[params.theid]?.rotation_period}
               </div>
             </div>
             <div className="col">

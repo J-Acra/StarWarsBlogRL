@@ -1,83 +1,54 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      favorites: [
-      ],
-      characters: [
-        {
-          Name: "Luke Skywalker",
-          height: "172",
-          skinColor: "fair",
-          hairColor: "Blonde",
-          eyeColor: "Blue",
-          birthYear: "19BBY",
-          gender: "Male",
-          uid: 0,
-          isFav: false,
-          detail: "/CharacterDetails/",
-          description: "This is a description",
-        },
-        {
-          Name: "C3P0",
-          height: "172",
-          skinColor: "fair",
-          hairColor: "Blonde",
-          eyeColor: "Blue",
-          birthYear: "19BBY",
-          gender: "Robot",
-          uid: 1,
-          isFav: false,
-          detail: "/CharacterDetails/",
-          description: "This is a description",
-        },
-      ],
-      planets: [
-        {
-          Name: "Tatooine",
-          terrain: "Grasslands, Mountains",
-          rotationPeriod: "23",
-          orbitalPeriod: "304",
-          diameter: "10465",
-          climate: "arid",
-          population: "200000",
-          uid: 0,
-          isFav: false,
-          detail: "/PlanetDetails/",
-          description: "This is a description",
-        },
-        {
-          Name: "Aldeeera",
-          terrain: "Grasslands, Mountains",
-          rotationPeriod: "23",
-          orbitalPeriod: "304",
-          diameter: "10465",
-          climate: "arid",
-          population: "200000",
-          uid: 1,
-          isFav: false,
-          detail: "/PlanetDetails/",
-          description: "This is a description",
-        },
-      ],
+      favorites: [],
+      characters: [],
+      planets: [],
+      images: {
+        "/PlanetDetails/0":
+          "https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg",
+      },
     },
     actions: {
-      // Use getActions to call a function within a fuction
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
+      loadCharacters: async () => {
+        const response = await fetch("https://swapi.dev/api/people");
+        if (response.status === 200) {
+          const payload = await response.json();
+          const myNewCharacters = payload.results.map((people, i) => {
+            (people.detail = "/CharacterDetails/"), (people.favStatus = false);
+            people.uid = i;
+            return people;
+          });
+          setStore({ characters: myNewCharacters });
+          console.log(payload.results);
+        }
       },
-      loadSomeData: () => {
-        /**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+      loadPlanets: async () => {
+        const response = await fetch("https://swapi.dev/api/planets");
+        if (response.status === 200) {
+          const payload = await response.json();
+          const myNewPlanets = payload.results.map((planets, i) => {
+            (planets.detail = "/PlanetDetails/"), (planets.favStatus = false);
+            planets.uid = i;
+            return planets;
+          });
+          setStore({ planets: myNewPlanets });
+          console.log(myNewPlanets);
+        }
       },
       checkFav: (favoriteCard) => {
         const { favorites } = getStore();
-        if (favoriteCard.isFav===true){
+        if (favoriteCard.isFav === true) {
           favoriteCard.isFav = false;
-          setStore({favorites: favorites.filter(favoriteItem => favoriteItem.uid + favoriteItem.Name !== favoriteCard.uid + favoriteCard.Name)})
-        }
-        else{
-          favoriteCard.isFav=true;
+          setStore({
+            favorites: favorites.filter(
+              (favoriteItem) =>
+                favoriteItem.uid + favoriteItem.name !==
+                favoriteCard.uid + favoriteCard.name
+            ),
+          });
+        } else {
+          favoriteCard.isFav = true;
           setStore({ favorites: favorites.concat(favoriteCard) });
         }
       },
@@ -91,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             return item;
           }
         });
-        console.log(newFavorites)
+        console.log(newFavorites);
         setStore({
           favorites: newFavorites.filter((f, favId) => favId !== position),
         });

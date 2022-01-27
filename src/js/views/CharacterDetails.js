@@ -10,10 +10,18 @@ export const CharacterDetails = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="detailPicture col"></div>
+          <div className="detailPicture col">
+            <img
+              src={
+                store.images[props.details + props.uid] ||
+                "https://snr.unl.edu/images/portrait-large/staff/whiteblank.gif"
+              }
+              className="float-start"
+            ></img>
+          </div>
           <div className="detailText col">
             <h1 className="mx-auto text-center">
-              {store.characters[params.theid]?.Name}
+              {store.characters[params.theid]?.name}
             </h1>
             <p className="text-center mx-4 p-5">
               {store.characters[params.theid]?.description}
@@ -23,13 +31,13 @@ export const CharacterDetails = (props) => {
             <div className="col">
               <div className="text-danger text-center">Name</div>
               <div className="mt-3 text-center">
-                {store.characters[params.theid]?.Name}
+                {store.characters[params.theid]?.name}
               </div>
             </div>
             <div className="col">
               <div className="text-danger text-center">Birth Year</div>
               <div className="mt-3 text-center">
-                {store.characters[params.theid]?.birthYear}
+                {store.characters[params.theid]?.birth_year}
               </div>
             </div>
             <div className="col">
@@ -47,13 +55,13 @@ export const CharacterDetails = (props) => {
             <div className="col">
               <div className="text-danger text-center">Hair Color</div>
               <div className="mt-3 text-center">
-                {store.characters[params.theid]?.hairColor}
+                {store.characters[params.theid]?.hair_color}
               </div>
             </div>
             <div className="col">
               <div className="text-danger text-center">Skin Color</div>
               <div className="mt-3 text-center">
-                {store.characters[params.theid]?.skinColor}
+                {store.characters[params.theid]?.skin_color}
               </div>
             </div>
           </div>

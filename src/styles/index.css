@@ -39,16 +39,6 @@
     overflow-x: auto;
     display: flex;
 }
-.detailPicture{
-    background:black;
-    height:400px;
-    width:400px;
-}
-.card-img-top{
-    width:286px;
-    height:174px;
-    background:grey;
-}
 .noStyle{
     text-decoration:none;
     color:black;

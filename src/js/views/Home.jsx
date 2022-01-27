@@ -16,12 +16,13 @@ const Home = (props) => {
           <div className="col mx-3">
             {" "}
             <CharacterCard
-              name={store.characters[id].Name}
+              name={store.characters[id].name}
               gender={store.characters[id].gender}
-              hairColor={store.characters[id].hairColor}
-              eyeColor={store.characters[id].eyeColor}
-              detail={store.characters[id].detail + id}
+              hairColor={store.characters[id].hair_color}
+              eyeColor={store.characters[id].eye_color}
+              detail={store.characters[id].detail}
               favStatus={store.characters[id].isFav}
+              uid = {store.characters[id].uid}
               data={c}
             />{" "}
           </div>
@@ -33,11 +34,12 @@ const Home = (props) => {
           <div className="col mx-3">
             {" "}
             <PlanetCard
-              name={store.planets[id].Name}
+              name={store.planets[id].name}
               population={store.planets[id].population}
               terrain={store.planets[id].terrain}
-              detail={store.planets[id].detail + id}
+              detail={store.planets[id].detail}
               favStatus={store.planets[id].isFav}
+              uid = {store.planets[id].uid}
               data={c}
             />{" "}
           </div>
