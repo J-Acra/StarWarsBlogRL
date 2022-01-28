@@ -73,7 +73,7 @@ export const Navbar = (props) => {
           </div>
         </div>
       </nav>
-      <div className="inputDiv">
+      <div className="inputDiv mb-3">
         <input
           className="form-control"
           type="text"
