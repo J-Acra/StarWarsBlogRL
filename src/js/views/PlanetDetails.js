@@ -24,7 +24,7 @@ export const PlanetDetails = (props) => {
               {store.planets[params.theid]?.name}
             </h1>
             <p className="text-center mx-4 p-5">
-              {store.planets[params.theid]?.description}
+              {store.planets[params.theid]?.description||"This is a generic description if information could not be fetched"}
             </p>
           </div>
           <div className="bottomInfo row border-top border-danger p-3">
