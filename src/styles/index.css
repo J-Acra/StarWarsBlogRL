@@ -8,6 +8,8 @@
     list-style-type: none;
     padding-left:0px;
     padding-top:2px;
+    white-space:nowrap;
+    overflow:hidden;
 }
 .favButton{
     background:white;
@@ -18,9 +20,10 @@
 .card-body{
     border-style:none;
 }
-.topImgPlaceHolder{
-    background:grey;
-    text-align:center;
+.card-img-top{
+    width:286px;
+    height:250px;
+
 }
 .card-title{
     text-align:left;
@@ -42,4 +45,17 @@
 .noStyle{
     text-decoration:none;
     color:black;
+}
+.detailImage{
+    height: 360px;
+    width: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+.fillDetail{
+    flex-shrink:0;
+    min-width: 100%;
+    min-height: 100%;
 }

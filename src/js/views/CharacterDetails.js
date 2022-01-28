@@ -10,13 +10,13 @@ export const CharacterDetails = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="detailPicture col">
+          <div className="detailImage col">
             <img
+              className="fillDetail mb-3"
               src={
-                store.images[props.details + props.uid] ||
+                store.images["/CharacterDetails/" + params.theid] ||
                 "https://snr.unl.edu/images/portrait-large/staff/whiteblank.gif"
               }
-              className="float-start"
             ></img>
           </div>
           <div className="detailText col">

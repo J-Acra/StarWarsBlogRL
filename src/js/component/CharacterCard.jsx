@@ -11,7 +11,7 @@ const CharacterCard = (props) => {
       <img
         className="card-img-top"
         src={
-          store.images[props.details + props.uid] ||
+          store.images[props.detail + props.uid] ||
           "https://snr.unl.edu/images/portrait-large/staff/whiteblank.gif"
         }
       ></img>

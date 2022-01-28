@@ -10,13 +10,13 @@ export const PlanetDetails = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col">
-          <img
+          <div className="detailImage col">
+            <img
+              className="fillDetail mb-3"
               src={
-                store.images["/PlanetDetails/"+ params.theid] ||
+                store.images["/PlanetDetails/" + params.theid] ||
                 "https://snr.unl.edu/images/portrait-large/staff/whiteblank.gif"
               }
-              className="float-start"
             ></img>
           </div>
           <div className="detailText col">

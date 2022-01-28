@@ -18,8 +18,8 @@ const Home = (props) => {
             <CharacterCard
               name={store.characters[id].name}
               gender={store.characters[id].gender}
-              hairColor={store.characters[id].hair_color}
-              eyeColor={store.characters[id].eye_color}
+              hair_color={store.characters[id].hair_color}
+              eye_color={store.characters[id].eye_color}
               detail={store.characters[id].detail}
               favStatus={store.characters[id].isFav}
               uid = {store.characters[id].uid}
