@@ -28,14 +28,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         "/PlanetDetails/0":
           "https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg",
         "/PlanetDetails/1": "https://i.ytimg.com/vi/3zJwYXB2ID0/hqdefault.jpg",
-        "/PlanetDetails/2": "https://www.giantbomb.com/a/uploads/scale_small/0/7941/287645-250px_yavin_4.jpg",
-        "/PlanetDetails/3": "https://64.media.tumblr.com/6e7ff270d6d120913bc835aa07446aee/tumblr_mtvoc7aV1M1qbwnuho1_1280.jpg",
-        "/PlanetDetails/4": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/star-wars-episode-7/6/68/Dagobah_2.jpg",
-        "/PlanetDetails/5": "https://www.giantbomb.com/a/uploads/scale_small/23/232057/2913077-bespin_eotecr.jpg",
-        "/PlanetDetails/6": "http://pm1.narvii.com/7621/264bea9e7763c6a6288b9b6fd7f6304621e9f34fr1-512-512v2_00.jpg",
-        "/PlanetDetails/7": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeltNQjR-cdB873uelSiSfUKDh5NRN7DZ-A&usqp=CAU",
-        "/PlanetDetails/8": "https://pbs.twimg.com/profile_images/1177177736/Coruscant-AoTCW_400x400.jpg",
-        "/PlanetDetails/9": "https://www.giantbomb.com/a/uploads/scale_small/0/118/541145-kamino.jpg",
+        "/PlanetDetails/2":
+          "https://www.giantbomb.com/a/uploads/scale_small/0/7941/287645-250px_yavin_4.jpg",
+        "/PlanetDetails/3":
+          "https://64.media.tumblr.com/6e7ff270d6d120913bc835aa07446aee/tumblr_mtvoc7aV1M1qbwnuho1_1280.jpg",
+        "/PlanetDetails/4":
+          "https://oyster.ignimgs.com/mediawiki/apis.ign.com/star-wars-episode-7/6/68/Dagobah_2.jpg",
+        "/PlanetDetails/5":
+          "https://www.giantbomb.com/a/uploads/scale_small/23/232057/2913077-bespin_eotecr.jpg",
+        "/PlanetDetails/6":
+          "http://pm1.narvii.com/7621/264bea9e7763c6a6288b9b6fd7f6304621e9f34fr1-512-512v2_00.jpg",
+        "/PlanetDetails/7":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeltNQjR-cdB873uelSiSfUKDh5NRN7DZ-A&usqp=CAU",
+        "/PlanetDetails/8":
+          "https://pbs.twimg.com/profile_images/1177177736/Coruscant-AoTCW_400x400.jpg",
+        "/PlanetDetails/9":
+          "https://www.giantbomb.com/a/uploads/scale_small/0/118/541145-kamino.jpg",
       },
     },
     actions: {

@@ -57,3 +57,16 @@
     min-width: 100%;
     min-height: 100%;
 }
+.homeIcon{
+    width:250px;
+    height:50px;
+    overflow:hidden;
+    display:flex;
+}
+.fillIcon{
+    justify-content: center;
+}
+.inputDiv{
+    width:1000px;
+    margin:auto;
+}
