@@ -106,7 +106,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       clearFavorites: () => {
         const { favorites } = getStore();
-        setStore({ favorites: [] });
+        let clearedFavorites = favorites.map(i=>{
+          i.isFav=false;
+          return i
+        })
+        setStore({ favorites: clearedFavorites});
+        setStore({ favorites: [] })
       },
     },
   };
