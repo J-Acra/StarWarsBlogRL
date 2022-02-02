@@ -73,6 +73,7 @@ export const Navbar = (props) => {
           </div>
         </div>
       </nav>
+      <button onclick={()=>actions.loadMoreCharacters()}>Load More Characters</button>
       <div className="inputDiv mb-3">
         <input
           className="form-control"

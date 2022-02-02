@@ -73,6 +73,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(myNewPlanets);
         }
       },
+      // function keeps running (infinite loop?)
+      // loadMoreCharacters:async()=>{
+      //   let loadedCharacters=[]
+      //   for (let i=11; i<60; i++){
+      //   const response=await fetch(`https://swapi.dev/api/people/${i}`)
+      //   const payload= await response.json();
+      //   loadedCharacters.push(payload)
+      // }
+      // setStore({characters:characters.concat(loadedCharacters)})
+      // console.log(loadedCharacters)
+      // },
       checkFav: (favoriteCard) => {
         const { favorites } = getStore();
         if (favoriteCard.isFav === true) {
